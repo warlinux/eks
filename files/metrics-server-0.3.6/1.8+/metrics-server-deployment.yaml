@@ -29,10 +29,10 @@ spec:
         emptyDir: {}
       containers:
       - name: metrics-server
-      - command:
+        image: k8s.gcr.io/metrics-server-amd64:v0.3.6
+        command:
         - /metrics-server
         - --kubelet-preferred-address-types=InternalIP
-        image: k8s.gcr.io/metrics-server-amd64:v0.3.6
         imagePullPolicy: Always
         volumeMounts:
         - name: tmp-dir
